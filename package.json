@@ -2,5 +2,5 @@
   "scripts": {
     "release": "standard-version"
   },
-  "version": null
+  "version": "0.0.0"
 }
