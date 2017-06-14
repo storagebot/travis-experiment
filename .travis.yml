@@ -1,0 +1,86 @@
+language: android
+jdk:
+- oraclejdk8
+sudo: required
+before_cache: "-rm -f $HOME/.gradle/caches/modules-2/modules-2.lock -rm -fr $HOME/.gradle/caches/*/plugin-resolution/"
+cache:
+  directories: "-$HOME/.gradle/caches/ -$HOME/.gradle/wrapper/"
+env:
+  global:
+  - ANDROID_API=25
+  - EMULATOR_API=25
+  - ANDROID_BUILD_TOOLS=25.0.3
+  - ADB_INSTALL_TIMEOUT=5
+  #$BT_GLOBALUSER
+  - secure: jVUb+5WdO+1ae+YUjQ2H+PKuRP71CcP4L1cx0PEO5sXk7nwVTV8FDwm6JOyfqHF8JHyYhAk1QRjoEO+vk05T1HJ9JmY+wMWgKLT4PFmS7xkHkAG1NLKI4ZG0dZbSqw7HdAS0PP5HHP6LbtepoP1tuXpnKIbaxt7geJ3gqQOKRomoJ0EIZYG2nGOlMIvw8bhCUrj3ooxAAa9JXtLrFDaL2powbu/ACVINq+S3vFlT9lXbVyhQXX4dpEYMZ16+KHdIkS5Bt6dQbgZRC4GWClxEp7OqeLnic3BaqTcVNfgUq25fW+Bg7HZF0HwGrtGWfMM7il5Q4RZifoxUB0BeZLsUK17Nsb7MW0ZRMFFT7DmeZBkKOldU+RCawFebBtzaIcbFBdMi5Ap6ZuKTu9gXAFV2g/K+NHQhwdBF29K4GCpbspmI6FgUHggoqzvO+i2ilLJG5DmIgEVIY1GbobVmJRJpiRwOlSRUGv+/38SqEVzc/dj/rLrJK41PrT1aJu+eni/Sc7U8k5VyLMw4qkBXQst/Ae8ZEG/7gvU8MGvF3dnUZ8OevjHKgWb4Dt+5cGCr81zuh3I2zu6LXm6fsHrWb8oDN2HGHl64fj2jYQ8peu3Zcn/zS2uRcY7BItOyxSWmN99msJ20LckXPUdEKoktjVkkvr0EiUzamzaTqLRU5KabV68=
+  #$BT_USER
+  - secure: SLGWwb+KORb19t3cctwY2SRf/6x2T/i9ii7GbtLJPQtyYyKYbtSW+9iXJiitjhwJY+DYl0zg8oAzpoO4keC6acSeF9F+6M2oT6ffgqJ2ImURDTy4JAn7MPcI7p8Fj6XBwApj/5Xmyi2ofHVAo5k00LM6Txn9wCTbWKFlvSrN4fyIeWYQBzmD3YRSoPYw0AbWxscymeoOkif4HB6TBaXk2zubR1bLexiYTJlwLsHw8P+bmdjZCO3BHbGEXlycRhwtBVdA/gH5Toq5/ywXw/6spwtIm/l08RhPUJGkiE00XmepFpFKGSa5BhN7KLFc6PHM4GyM20RYOBMMY4LalAEPj2lj4mnbtnkNxnD30DuCLX8JNEV820/Id9azUlAn6lsU8MQ2b3GN4ShyvFq4+B0TBD0wTDIcMQ48VWf+2uqaXkKPs870IQVUXOkMzQfZRURozGUd3Y+tmer51J1jr1VJgM+YzETD6Xq/mOw2nlD176qPYl2fTb5PhCaSlx9yORf9EybeGARrGfPLCFNJto2Lh/1DgStuYR1BeduoJvXrxG//h8AQ9Fmokc18CPUHNGO+gWBq/l0zYbOROsEjVp/NF/u2Tb36NVUI1ujozap1Qc98RSBodWOvYjEXJxkIZRCa/WoiAhoXFyxRci+8Qr4NPhQYrM7+1YXSzZqPSlH5jhw=
+  #$BT_APIKEY
+  - secure: B+KW8JB9ajnXxg09GS0io/Ma7qDxysWVDuumK7bXkxvchlldjlqzU7XF/Pr/jjxWOIBPeRfRpzRPYVlAKYGNNBq1kEKCJl2tTrDe7/d7vXpEyCJi50dkKIO62TEyabQGBwGPismhJTj9xHnebwqplrR+xJ3Jdq7qeO3NUJ0R9RoQP6vnjGVmjLp88eRoM6iPXj6/Y1LLdsac0b9YEx5wpSWiP0FGmKNnTAGgwxfaYqmgUU7rZtgPfWAmx7K/fgmE6PiypwYyxn5IqHU93JKi/qDCUPwnY9jN8Rio8faIc9GCDRzrmb3qWfXXethWhH7pXYd6x17yfSu85jggPLnnAXi/ku1srCrI9Rj7bprhPcp8glmX1tdm/oXpv97gT+1jw+hFcDKJ378DRnq/YOK3C/gyDBtOaN/vB27+2C6cMVw6+WukHApxIM8ISn+c3f07vrJ4ds6QtBVV60ceKvXTB91USEWvKdoQnBZQFLaUpApg5TFuOLmXKGHfbmc5+wordl3Fn8RQAoqgFi3xhMSeLbXhSZlCLPXHMDH7h83A+xk/YCFlPGnl9nsMmWx8bnnfYNt9tWiDwU6zToodXRcR3jLmIQdNaluR3pF9E9uuiWE9+JV7w6aK3C28oUvHv6oODhvWCvK2fQ2AxCfD9SG/JMVyZk+dHQaxYcbfuBGFjgs=
+  #$GITHUBTOKEN
+  - secure: cWloW5GClciwzUfvNfobvS0LbW97S/8AEsO+TdzVVOZkYqmYkfHsjXlJ4fnyu3WNhArmufo9CXX7Bv/L4FVI0ZjnDLAs/9DZDh4LvBTsVnFeG2MUvHjcHozmVzhiwRfLPOsQ6H0Py8QrIJANLsMPYpH4ZKLJ7GJfc2xt8/7PIBWwRjCPtMbdY/g1bZTtC4MkI5rURDP1EU2CMmC/mxSqg5KSpqovxeKg3Ihk20fM9uYXfFfWlw8QAo3opiHHknFUqSA1G2yvs3yIxhdZ2OrIUk/63/fg2+lByaUkt0WJnp2CKHfiE8Rug+K/AszPc8g+mPXDkdUJhKquz2o1/mX2AtrrUq1C11qZ2eKQ0KCAK0ibTuJjLqVlxG2lVwEk7zDBO9LgIlZ81aQ+R8gHblNS6PMaNrasy5Od9Ce2iNTHi60duBRDf23XADMmiEoGZaDGi9ILblJ2I1oIpAY4z287wCu1n5ecD/tfqDFzKhErjsSdcsENcD1Ul9vPQUdWbBGJPLQp83UY9EpZrS9rJpkNeWIEd18mgIcJfZGvviIv2qf4S08+NAXgvs/RI0/ppTk5USMccDD2AK7WBfi5Z3etGzmxT44GCUsH8l3G9eQ//my6mAYb8OyrpL4xUcfpgRY3To38wwnHmDbkhu5zhD3zBqC6fHeo+8U1rIafAWyW7cc="
+android:
+  components:
+  - tools
+  - platform-tools
+  - build-tools-$ANDROID_BUILD_git TOOLS
+  - android-$ANDROID_API
+  - extra-android-m2repository
+  - extra-google-m2repository
+  - extra-android-support
+  - sys-img-armeabi-v7a-addon-google_apis-google-$ANDROID_API
+  - sys-img-armeabi-v7a-addon-google_apis-google-$EMULATOR_API
+  licenses:
+  - android-sdk-preview-license-.+
+  - android-sdk-license-.+
+  - google-gdk-license-.+
+before_install:
+  # config git
+  - git config --global user.name 'Rafael Hernandez'
+  - git config --global user.email 'rhernandez@teclib.com'
+  - git config --global github.token $GITHUBTOKEN
+
+  # for bintray upload
+  - echo "bintray.globaluser=$BT_GLOBALUSER" > local.properties
+  - echo "bintray.user=$BT_USER" >> local.properties
+  - echo "bintray.apikey=$BT_APIKEY" >> local.properties
+  # for Android build
+  - mkdir "$ANDROID_HOME/licenses" || true
+  - echo
+  - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
+  - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
+  - chmod +x gradlew
+  - "./gradlew dependencies || true"
+install:
+#  - |
+#    if [[ $TRAVIS_BRANCH == "master" ]] && [[ $TRAVIS_PULL_REQUEST == "false" ]]; then
+#      npm i -g standard-version
+#    fi
+#    review TRAVIS_TAG
+
+  - npm i -g standard-version
+
+script:
+  - "./gradlew clean build -PdisablePreDex --stacktrace"
+
+after_success:
+      - git checkout master; git pull origin master
+      - standard-version
+      - git push --follow-tags origin master
+      - git config --list
+
+
+before_deploy:
+  - |
+    if [[ $TRAVIS_BRANCH == "master" ]] && [[ $TRAVIS_PULL_REQUEST == "false" ]]; then
+      "./gradlew install"
+      "./gradlew bintrayUpload"
+    fi
+
+deploy:
+  provider: releases
+  api_key: $GITHUBTOKEN
+  skip_cleanup: true
+
+notifications:
+  webhooks: https://fathomless-fjord-24024.herokuapp.com/notify
